@@ -1,3 +1,7 @@
+# ライフゲーム
+# 参考サイト:
+#     ライフゲーム 【プログラミング講座】(https://www.youtube.com/watch?v=cvxq_8jXGRE&t)
+
 import math
 class Gen:
     def __init__(self):
@@ -72,8 +76,8 @@ class Gen:
         return x,y
     
     def draw(self):
-        fill(0, 51, 153)
-        stroke(255,255,255)
+        fill(255, 204, 0)
+        stroke(204, 102, 0)
         for i,c in zip(range(len(self.cells)),self.cells):
             x,y = self.index_to_xy(i)
             w = height/math.sqrt(len(self.cells))
@@ -85,14 +89,14 @@ class Gen:
 g = Gen()
 
 def redrawAll():
-    background(204,204,255)
+    background(204, 255, 255)
     g.draw()
     # print(g.cells)
     return
 
 def setup():
     global g
-    size(480,480)
+    size(600,600)
     redrawAll()
     return
 
